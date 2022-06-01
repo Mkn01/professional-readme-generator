@@ -19,5 +19,6 @@
   "homepage": "https://github.com/Mkn01/professional-readme-generator#readme",
   "dependencies": {
     "inquirer": "^8.2.4"
-  }
+  },
+  "devDependencies": {}
 }
