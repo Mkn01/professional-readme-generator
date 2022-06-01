@@ -1,5 +1,4 @@
 const inquirer = require("inquirer");
-const Choices = require("inquirer/lib/objects/choices");
 
 // questions array
 const questions = [
@@ -56,3 +55,7 @@ const questions = [
     message: "Please enter your GitHub username",
   },
 ];
+
+inquirer.prompt(questions).then((answers) => {
+  console.log(answers);
+});
