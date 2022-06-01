@@ -1,4 +1,7 @@
+//import inquirer and fs
+const fs = require("fs");
 const inquirer = require("inquirer");
+const { json } = require("stream/consumers");
 
 // questions array
 const questions = [
@@ -122,7 +125,9 @@ const init = async () => {
   //display answers
   console.log(answers);
   // generate user input to readme
-  const readMe = `# ${generateInputToReadme.answers} ![](https://img.shields.io/badge/MIT-License-green)
+  const readMe = `# ${generateInputToReadme(
+    answers
+  )} ![](https://img.shields.io/badge/MIT-License-green)
 
   ## Table of Contents
   
@@ -136,14 +141,14 @@ const init = async () => {
   
   ## Description
   
-  ${generateInputToReadme.answers}
+  ${generateInputToReadme(answers)}
   
   ## Installation
   
   Please follow the instructions below:
   ````
   
-  ${generateInputToReadme.answers}
+  ${generateInputToReadme(answers)}
   
   ````
   ## Usage
@@ -151,30 +156,34 @@ const init = async () => {
   Please follow the instructions below:
   
   ````
-  ${generateInputToReadme.answers}
+  ${generateInputToReadme(answers)}
   ````
   
   ## License
   
-  ${generateInputToReadme.answers}
+  ${generateInputToReadme(answers)}
   
   ## Contributing
   
-  ${generateInputToReadme.answers}
+  ${generateInputToReadme(answers)}
   
   ## Tests
   
   Please follow the instructions below:
   
   ````
-  ${generateInputToReadme.answers}
+  ${generateInputToReadme(answers)}
   ````
   
   ## Questions
   
-  Please contact me on my email: ${generateInputToReadme.answers}
+  Please contact me on my email: ${generateInputToReadme(answers)}
   
-  Visit my GitHub profile [here](https://github.com/${generateInputToReadme.answers})`;
+  Visit my GitHub profile [here](https://github.com/${generateInputToReadme(
+    answers
+  )})`;
+  //write generated readme to file
+  fs.writeFileSync("Generated_README.md", readMe);
 };
 
 init();
