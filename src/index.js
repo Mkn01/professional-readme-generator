@@ -1,7 +1,6 @@
 //import inquirer and fs
 const fs = require("fs");
 const inquirer = require("inquirer");
-const { json } = require("stream/consumers");
 
 // questions array
 const questions = [
@@ -58,10 +57,20 @@ const questions = [
     message: "Please enter your GitHub username",
   },
 ];
+//switch statement to generate badge
+const returnUrlForLicense = (licenseType) => {
+  switch (licenseType) {
+    case "MIT License":
+      return "https://img.shields.io/badge/MIT-License-green";
+    case "Apache License 2.0":
+      return "https://img.shields.io/badge/MIT-License-green";
+  }
+};
+
 //function to generate user input to readme
+
 const generateInputToReadme = (answers) => {
-  const createReadme = (answer) => {
-    const title = `# ${answer.projectTitle} ![](https://img.shields.io/badge/MIT-License-green)
+  return `# ${answers.title} ![](${returnUrlForLicense(answers.license)})
 
 ## Table of Contents
 
@@ -75,47 +84,45 @@ const generateInputToReadme = (answers) => {
 
 ## Description
 
-${answer.description}
+${answers.description}
 
 ## Installation
 
 Please follow the instructions below:
-````
 
-${answer.installation}
 
-````
+${answers.installation}
+
+
 ## Usage
 
 Please follow the instructions below:
 
-````
-${answer.usage}
-````
+\`\`\`
+${answers.usage}
+\`\`\`
 
 ## License
 
-${answer.license}
+${answers.license}
 
 ## Contributing
 
-${answer.contributing}
+${answers.contributing}
 
 ## Tests
 
 Please follow the instructions below:
 
-````
-${answer.tests}
-````
+
+${answers.tests}
+
 
 ## Questions
 
-Please contact me on my email: ${answer.email}
+Please contact me on my email: ${answers.email}
 
-Visit my GitHub profile [here](https://github.com/${answer.gitHubUsername})`;
-  };
-  return answers.map(createReadme).join("");
+Visit my GitHub profile [here](https://github.com/${answers.gitHubUsername})`;
 };
 
 const init = async () => {
@@ -125,63 +132,7 @@ const init = async () => {
   //display answers
   console.log(answers);
   // generate user input to readme
-  const readMe = `# ${generateInputToReadme(
-    answers
-  )} ![](https://img.shields.io/badge/MIT-License-green)
-
-  ## Table of Contents
-  
-  - [Description](#description)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [License](#license)
-  - [Contributing](#contributing)
-  - [Tests](#tests)
-  - [Questions](#questions)
-  
-  ## Description
-  
-  ${generateInputToReadme(answers)}
-  
-  ## Installation
-  
-  Please follow the instructions below:
-  ````
-  
-  ${generateInputToReadme(answers)}
-  
-  ````
-  ## Usage
-  
-  Please follow the instructions below:
-  
-  ````
-  ${generateInputToReadme(answers)}
-  ````
-  
-  ## License
-  
-  ${generateInputToReadme(answers)}
-  
-  ## Contributing
-  
-  ${generateInputToReadme(answers)}
-  
-  ## Tests
-  
-  Please follow the instructions below:
-  
-  ````
-  ${generateInputToReadme(answers)}
-  ````
-  
-  ## Questions
-  
-  Please contact me on my email: ${generateInputToReadme(answers)}
-  
-  Visit my GitHub profile [here](https://github.com/${generateInputToReadme(
-    answers
-  )})`;
+  const readMe = generateInputToReadme(answers);
   //write generated readme to file
   fs.writeFileSync("Generated_README.md", readMe);
 };
