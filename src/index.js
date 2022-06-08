@@ -63,7 +63,11 @@ const returnUrlForLicense = (licenseType) => {
     case "MIT License":
       return "https://img.shields.io/badge/MIT-License-green";
     case "Apache License 2.0":
-      return "https://img.shields.io/badge/MIT-License-green";
+      return "https://img.shields.io/badge/license-Apache%202.0-green";
+    case "Mozilla Public License 2.0":
+      return "https://img.shields.io/badge/license-Mozilla%20Public%202.0-green";
+    case "GNU General Public License v3.0":
+      return "https://img.shields.io/badge/license-GNU%20General%20Public%20v3.0-green";
   }
 };
 

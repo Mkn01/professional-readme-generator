@@ -1,4 +1,4 @@
-# po ![](https://img.shields.io/badge/MIT-License-green)
+# Project02 ![](https://img.shields.io/badge/MIT-License-green)
 
 ## Table of Contents
 
@@ -12,14 +12,14 @@
 
 ## Description
 
-po
+op
 
 ## Installation
 
 Please follow the instructions below:
 
 
-po
+op
 
 
 ## Usage
@@ -27,27 +27,27 @@ po
 Please follow the instructions below:
 
 ```
-po
+op
 ```
 
 ## License
 
-Apache License 2.0
+MIT License
 
 ## Contributing
 
-po
+op
 
 ## Tests
 
 Please follow the instructions below:
 
 
-po
+op
 
 
 ## Questions
 
-Please contact me on my email: po
+Please contact me on my email: op
 
 Visit my GitHub profile [here](https://github.com/undefined)
