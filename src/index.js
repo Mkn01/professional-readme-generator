@@ -53,8 +53,8 @@ const questions = [
   },
   {
     type: "input",
-    name: "githubUsername",
-    message: "Please enter your GitHub username",
+    name: "githubUrl",
+    message: "Please enter the url to your GitHub profile",
   },
 ];
 //switch statement to generate badge
@@ -84,7 +84,7 @@ const generateInputToReadme = (answers) => {
 - [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
-- [Questions](#questions)
+- [Developer Information](#developer-information)
 
 ## Description
 
@@ -122,11 +122,11 @@ Please follow the instructions below:
 ${answers.tests}
 
 
-## Questions
+## Developer Information
 
 Please contact me on my email: ${answers.email}
 
-Visit my GitHub profile [here](https://github.com/${answers.gitHubUsername})`;
+Visit my GitHub profile [here](${answers.githubUrl})`;
 };
 
 const init = async () => {

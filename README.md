@@ -15,13 +15,23 @@ This is a professional readme generator, it takes user input data from a series 
 
 ## Installation
 
-Please follow the instructions below:
+Please follow the instructions below to install this application:
 
-op
+In your terminal clone the repository
+
+```
+git clone git@github.com:Mkn01/professional-readme-generator.git
+```
+
+Go into the repository and install the required packages:
+
+```
+npm install inquire
+```
 
 ## Usage
 
-In the integrated terminal type the following command:
+In the integrated terminal the following command should be entered in the command line:
 
 ```
 npm run start
@@ -33,6 +43,8 @@ MIT License
 
 ## Video demo
 
-## Questions
+View a Demo of the application [here](https://drive.google.com/file/d/1XXO0Utj9kZU5f7W6dOuw66GTPpbxDnve/view)
+
+## Developer Information
 
 Visit GitHub repository [here](https://github.com/Mkn01/professional-readme-generator)

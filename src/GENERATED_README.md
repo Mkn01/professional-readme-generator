@@ -8,7 +8,7 @@
 - [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
-- [Questions](#questions)
+- [Developer Information](#developer-information)
 
 ## Description
 
@@ -46,8 +46,8 @@ Please follow the instructions below:
 npm run test
 ```
 
-## Questions
+## Developer Information
 
 Please contact me on my email: myemail@email.com
 
-Visit my GitHub profile [here](https://github.com/surajverma2587)
+Visit my GitHub profile [here](https://github.com/Mkn01)
